@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 export default function AuthPage() {
   const router = useRouter();
   const [mode, setMode] = useState<"login" | "register">("login");
-  const [form, setForm] = useState({ name: "", email: "", password: "", role: "child" });
+  const [form, setForm] = useState({ name: "", email: "", password: "", role: "child", patientId: "" });
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -25,6 +25,7 @@ export default function AuthPage() {
     localStorage.setItem("token", data.token);
     localStorage.setItem("role", data.role);
     localStorage.setItem("name", data.name);
+    if (data.patientId) localStorage.setItem("patientId", data.patientId);
     router.push("/dashboard");
   }
 
@@ -113,6 +114,19 @@ export default function AuthPage() {
                 <input type="text" placeholder="Dr. Sarah Johnson" value={form.name}
                   onChange={e => setForm({ ...form, name: e.target.value })}
                   required={mode === "register"}
+                  className="w-full border-0 border-b-2 border-gray-200 focus:border-blue-600 focus:ring-0 pl-8 pb-2 pt-1 text-sm text-gray-700 bg-transparent outline-none transition-colors" />
+              </div>
+            </div>
+
+            {/* Patient ID - for parent/child only */}
+            <div className="space-y-1 overflow-hidden transition-all duration-300 ease-in-out"
+              style={{ maxHeight: mode === "register" && form.role !== "care_manager" ? "80px" : "0px", opacity: mode === "register" && form.role !== "care_manager" ? 1 : 0 }}>
+              <label className="text-[10px] font-bold uppercase tracking-widest text-gray-400">Patient ID <span className="text-gray-300">(e.g. p001)</span></label>
+              <div className="relative">
+                <span className="material-symbols-outlined absolute left-0 top-1/2 -translate-y-1/2 text-gray-400 text-lg">personal_injury</span>
+                <input type="text" placeholder="p001" value={form.patientId}
+                  onChange={e => setForm({ ...form, patientId: e.target.value })}
+                  required={mode === "register" && form.role !== "care_manager"}
                   className="w-full border-0 border-b-2 border-gray-200 focus:border-blue-600 focus:ring-0 pl-8 pb-2 pt-1 text-sm text-gray-700 bg-transparent outline-none transition-colors" />
               </div>
             </div>

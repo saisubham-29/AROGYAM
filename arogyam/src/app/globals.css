@@ -71,6 +71,10 @@ body {
   color: #1a1c1d;
 }
 
+#top-nav {
+  height: 4rem;
+}
+
 h1, h2, h3 {
   font-family: 'Manrope', sans-serif;
 }

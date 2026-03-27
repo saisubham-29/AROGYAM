@@ -14,9 +14,9 @@ export async function POST(req: NextRequest) {
   const valid = await bcrypt.compare(password, user.password);
   if (!valid) return NextResponse.json({ error: "Invalid credentials" }, { status: 401 });
 
-  const token = signToken({ id: user._id, role: user.role, name: user.name });
+  const token = signToken({ id: user._id, role: user.role, name: user.name, patientId: user.patientId });
 
-  const res = NextResponse.json({ token, role: user.role, name: user.name });
+  const res = NextResponse.json({ token, role: user.role, name: user.name, patientId: user.patientId });
   // Set cookie so middleware can verify on server side
   res.cookies.set("token", token, { httpOnly: true, path: "/", maxAge: 60 * 60 * 24 * 7 });
   return res;

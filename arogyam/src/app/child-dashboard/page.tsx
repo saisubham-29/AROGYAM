@@ -16,7 +16,8 @@ export default function ChildDashboard() {
     if (!token) return router.push("/");
     if (role !== "child") return router.push("/dashboard");
 
-    fetch("/api/patient/p001", { headers: { Authorization: `Bearer ${token}` } })
+    const patientId = localStorage.getItem("patientId") || "p001";
+    fetch(`/api/patient/${patientId}`, { headers: { Authorization: `Bearer ${token}` } })
       .then(r => r.ok && r.json()).then(d => d && setRecords(d));
   }, []);
 

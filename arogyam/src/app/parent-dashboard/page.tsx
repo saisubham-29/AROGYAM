@@ -20,8 +20,9 @@ export default function ParentDashboard() {
 
     const headers = { Authorization: `Bearer ${token}` };
     fetch("/api/alerts", { headers }).then(r => r.ok && r.json()).then(d => d && setAlerts(d));
-    // Load latest record for first patient
-    fetch("/api/patient/p001", { headers }).then(r => r.ok && r.json()).then(d => d?.length && setLatest(d[0]));
+    // Load latest record for linked patient
+    const patientId = localStorage.getItem("patientId") || "p001";
+    fetch(`/api/patient/${patientId}`, { headers }).then(r => r.ok && r.json()).then(d => d?.length && setLatest(d[0]));
   }, []);
 
   return (

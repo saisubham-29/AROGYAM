@@ -7,7 +7,7 @@ export default function Settings() {
       <TopNav activeTab="dashboard" />
       <SideNav activeItem="security" />
 
-      <main className="lg:pl-64 pt-16 min-h-screen">
+      <main className="lg:pl-64 pt-24 min-h-screen">
         <div className="max-w-6xl mx-auto p-8 lg:p-12">
           <header className="mb-12">
             <h1 className="text-4xl font-extrabold text-[#1a1c1d] tracking-tight mb-2" style={{ fontFamily: "Manrope, sans-serif" }}>Settings &amp; Security</h1>
