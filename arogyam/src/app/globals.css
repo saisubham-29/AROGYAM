@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #00478d;
+  --color-primary-container: #005eb8;
+  --color-primary-fixed: #d6e3ff;
+  --color-primary-fixed-dim: #a9c7ff;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #c8daff;
+  --color-on-primary-fixed: #001b3d;
+  --color-on-primary-fixed-variant: #00468c;
+  --color-inverse-primary: #a9c7ff;
+
+  --color-secondary: #396661;
+  --color-secondary-container: #bcece5;
+  --color-secondary-fixed: #bcece5;
+  --color-secondary-fixed-dim: #a1d0c9;
+  --color-on-secondary: #ffffff;
+  --color-on-secondary-container: #3f6c67;
+  --color-on-secondary-fixed: #00201d;
+  --color-on-secondary-fixed-variant: #204e4a;
+
+  --color-tertiary: #414273;
+  --color-tertiary-container: #595a8d;
+  --color-tertiary-fixed: #e1dfff;
+  --color-tertiary-fixed-dim: #c1c1fb;
+  --color-on-tertiary: #ffffff;
+  --color-on-tertiary-container: #d6d5ff;
+  --color-on-tertiary-fixed: #151545;
+  --color-on-tertiary-fixed-variant: #414273;
+
+  --color-error: #ba1a1a;
+  --color-error-container: #ffdad6;
+  --color-on-error: #ffffff;
+  --color-on-error-container: #93000a;
+
+  --color-surface: #faf9fb;
+  --color-surface-dim: #dadadc;
+  --color-surface-bright: #faf9fb;
+  --color-surface-variant: #e3e2e4;
+  --color-surface-tint: #005db6;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f4f3f5;
+  --color-surface-container: #eeedf0;
+  --color-surface-container-high: #e8e8ea;
+  --color-surface-container-highest: #e3e2e4;
+  --color-on-surface: #1a1c1d;
+  --color-on-surface-variant: #424752;
+  --color-inverse-surface: #2f3032;
+  --color-inverse-on-surface: #f1f0f2;
+
+  --color-outline: #727783;
+  --color-outline-variant: #c2c6d4;
+
+  --color-background: #faf9fb;
+  --color-on-background: #1a1c1d;
+
+  --font-headline: "Manrope", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-label: "Inter", sans-serif;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  vertical-align: middle;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #faf9fb;
+  color: #1a1c1d;
+}
+
+h1, h2, h3 {
+  font-family: 'Manrope', sans-serif;
+}
